@@ -56,3 +56,51 @@ transform: rotate(-45deg);
 ```
 
 So, altogether, this CSS code creates a black arrow that is positioned at the top right corner of the .balloon element, and is rotated 45 degrees counterclockwise.
+
+---
+
+Certainly! Here is an explanation of how this code can lift the balloon element on the page up and form an animation:
+
+1. The `lifting` function is defined. This function is responsible for lifting up the balloons.
+
+```
+function lifting() {
+```
+
+2. The first line inside the function hides the `gameCanvas` element by setting its `display` property to `none`. This is done so that the balloons are the only visible elements during the animation.
+
+```
+gameCanvas.style.display = 'none'
+```
+
+3. The next line starts a `for` loop that iterates through each balloon in the `balloons` array.
+
+```
+for (const balloon of balloons) {
+```
+
+4. Inside the loop, the `lift` method is called on each balloon object. The `lift` method is likely a custom method that is defined elsewhere in the codebase, and is responsible for changing the position of the balloon on the page to simulate it lifting up.
+
+```
+balloon.lift()
+```
+
+5. After the loop completes, the `gameCanvas` element is shown again by setting its `display` property to `block`.
+
+```
+gameCanvas.style.display = 'block'
+```
+
+6. Finally, `requestAnimationFrame` is used to schedule the next iteration of the `lifting` function. This is necessary to create a smooth animation, as it schedules the next frame to be drawn right before the browser's next repaint cycle. This ensures all changes to the DOM are made before the next frame is drawn.
+
+```
+requestAnimationFrame(lifting)
+```
+
+7. Finally, the `lifting` function is called once to start the animation.
+
+```
+lifting() // start lifting balloons up
+```
+
+So, altogether, this code uses the `lifting` function to iterate through each balloon in an array, and call a custom `lift` method on each balloon to simulate it lifting up. The `requestAnimationFrame` method is used to schedule the next iteration of the `lifting` function, creating a smooth animation effect. Additionally, the `gameCanvas` element is hidden and shown again to ensure that only the balloons are visible during the animation.
