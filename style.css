@@ -1,0 +1,30 @@
+.gameCanvas {
+  position: absolute;
+  width: 70%;
+  height: 100%;
+}
+.scoreBoard {
+  position: absolute;
+  width: 20%;
+  left: 80%;
+}
+.balloon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px #666 solid;
+  border-radius: 50% 50% 30% 50%; /* top left, top right, bottom right, bottom left*/
+  box-shadow: -4px -4px 10px #fff inset;
+}
+/* balloon::after is the arrow, which is rotated 45 degrees */
+.balloon::after {
+  content: ''; /* content is required for pseudo elements */
+  position: absolute; /* position the arrow relative to the balloon */
+  border: 6px solid transparent; /* make the arrow transparent */
+  border-bottom: 8px solid #555; /* make the arrow black */
+  width: 0;
+  height: 0;
+  top: 40px;
+  left: 40px;
+  transform: rotate(-45deg); /* rotate the arrow */
+}
